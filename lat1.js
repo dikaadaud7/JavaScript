@@ -88,57 +88,124 @@
 //         break;
 // }   
 
-let month = prompt("Enter your month:").toLowerCase()
-switch (month) {
-    case "january":
-        let msg1 = `${month} has 31 days`
-        console.log(msg1.charAt(0).toUpperCase() + msg1.slice(1));
-        break;
-    case "february":
-        let msg2 = `${month} has 28 days`
-        console.log(msg2.charAt(0).toUpperCase() + msg2.slice(1))
-        break;
-    case "march":
-        let msg3 = `${month} has 31 days`
-        console.log(msg3.charAt(0).toUpperCase() + msg3.slice(1))
-        break;
-    case "april":
-        let msg4 = `${month} has 30 days`
-        console.log(msg4.charAt(0).toUpperCase() + msg4.slice(1))
-        break;
-    case "may":
-        let msg5 = `${month} has 31 days`
-        console.log(msg5.charAt(0).toUpperCase() + msg5.slice(1))
-        break;
-    case "june":
-        let msg6 = `${month} has 30 days`
-        console.log(msg6.charAt(0).toUpperCase() + msg6.slice(1))
-        break;
-    case "july":
-        let msg7 = `${month} has 30 days`
-        console.log(msg7.charAt(0).toUpperCase() + msg7.slice(1))
-        break;
-    case "august":
-        let msg8 = `${month} has 31 days`
-        console.log(msg8.charAt(0).toUpperCase() + msg8.slice(1))
-        break;
-    case "september":
-        let msg9 = `${month} has 30 days`
-        console.log(msg9.charAt(0).toUpperCase() + msg9.slice(1))
-        break;
-    case "october":
-        let msg10 = `${month} has 31 days`
-        console.log(msg10.charAt(0).toUpperCase() + msg10.slice(1))
-        break;
-    case "november":
-        let msg11 = `${month} has 30 days`
-        console.log(msg11.charAt(0).toUpperCase() + msg11.slice(1))
-        break;
-    case "december":
-        let msg12 = `${month} has 31 days`
-        console.log(msg12.charAt(0).toUpperCase() + msg12.slice(1))
-        break;
-    default:
-        console.log("Not A Month")
-        break;
+// let month = prompt("Enter your month:").toLowerCase()
+// switch (month) {
+//     case "january":
+//         let msg1 = `${month} has 31 days`
+//         console.log(msg1.charAt(0).toUpperCase() + msg1.slice(1));
+//         break;
+//     case "february":
+//         let msg2 = `${month} has 28 days`
+//         console.log(msg2.charAt(0).toUpperCase() + msg2.slice(1))
+//         break;
+//     case "march":
+//         let msg3 = `${month} has 31 days`
+//         console.log(msg3.charAt(0).toUpperCase() + msg3.slice(1))
+//         break;
+//     case "april":
+//         let msg4 = `${month} has 30 days`
+//         console.log(msg4.charAt(0).toUpperCase() + msg4.slice(1))
+//         break;
+//     case "may":
+//         let msg5 = `${month} has 31 days`
+//         console.log(msg5.charAt(0).toUpperCase() + msg5.slice(1))
+//         break;
+//     case "june":
+//         let msg6 = `${month} has 30 days`
+//         console.log(msg6.charAt(0).toUpperCase() + msg6.slice(1))
+//         break;
+//     case "july":
+//         let msg7 = `${month} has 30 days`
+//         console.log(msg7.charAt(0).toUpperCase() + msg7.slice(1))
+//         break;
+//     case "august":
+//         let msg8 = `${month} has 31 days`
+//         console.log(msg8.charAt(0).toUpperCase() + msg8.slice(1))
+//         break;
+//     case "september":
+//         let msg9 = `${month} has 30 days`
+//         console.log(msg9.charAt(0).toUpperCase() + msg9.slice(1))
+//         break;
+//     case "october":
+//         let msg10 = `${month} has 31 days`
+//         console.log(msg10.charAt(0).toUpperCase() + msg10.slice(1))
+//         break;
+//     case "november":
+//         let msg11 = `${month} has 30 days`
+//         console.log(msg11.charAt(0).toUpperCase() + msg11.slice(1))
+//         break;
+//     case "december":
+//         let msg12 = `${month} has 31 days`
+//         console.log(msg12.charAt(0).toUpperCase() + msg12.slice(1))
+//         break;
+//     default:
+//         console.log("Not A Month")
+//         break;
+// }
+
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+let sorting = ages.sort();
+let min = sorting[0];
+let max = Math.max(...sorting);
+
+let avg = ages.reduce((a,b) => a + b ) / ages.length
+
+let total = 0
+ages.forEach(function(age) {
+    total += age
+});
+
+let range = max - min
+
+let minAvg = Math.abs(min - avg);
+let maxAvg = Math.abs(max - avg);
+
+console.log(minAvg)
+console.log(maxAvg)
+console.log(range)
+console.log(total/ages.length)
+console.log(avg)
+console.log(eval(ages.join('+'))/ages.length)
+console.log(min)
+console.log("Max: " + max)
+
+const countries = [
+    'Albania',
+    'Bolivia',
+    'Canada',
+    'Denmark',
+    'Ethiopia',
+    'Finland',
+    'Germany',
+    'Hungary',
+    'Ireland',
+    'Japan',
+    'Kenya'
+  ]
+
+let tenCount = countries.slice(0,10)
+let midCount = "";
+if(countries.length % 2 === 0){
+    midCount = countries[countries.length / 2 - 1 ]
+}else{
+    midCount = countries[Math.floor(countries.length / 2)]
 }
+
+let firstHalf = [];
+let secoundHalf =[];
+
+if(countries.length % 2 === 0){
+    secoundHalf = countries.slice(countries.length / 2)
+    firstHalf = countries.slice(0, countries.length / 2)
+}else{
+    secoundHalf = countries.slice(countries.length / 2 + 1)
+    firstHalf = countries.slice(0,countries.length / 2 + 1)
+}
+
+console.log(firstHalf);
+console.log(secoundHalf);
+console.log(tenCount)
+console.log(midCount)
+
+
